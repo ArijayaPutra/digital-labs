@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-container {
+	position: absolute;
+	width: 100%;
+	top: -100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #111112;
+	color: white;
+	font-weight: bold;
+	transition: top 0.5s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu-container.open {
+	top: 0;
+}
+
+.menu-container ul {
+	padding: 0;
+	list-style: none;
+}
+
+.menu-container li {
+	padding: 8px 16px;
+}
+
+.menu-container .close-icon {
+	position: absolute;
+	top: 10px;
+	right: 8px;
+	cursor: pointer;
+}
