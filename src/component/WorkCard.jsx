@@ -21,6 +21,7 @@ const WorkCard = () => {
 	const handleImageLeave = () => {
 		setHoveredImage(null);
 	};
+
 	return (
 		<div>
 			<div className='flex gap-4'>

@@ -3,10 +3,11 @@ import { LuChevronLeft, LuChevronRight, LuArrowRight } from 'react-icons/lu';
 import Space1 from '../assets/space-1.png';
 import Space2 from '../assets/space-2.png';
 import Space3 from '../assets/space-3.png';
+import '../index.css';
 
 const SpaceCard = () => {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
-	const images = [Space1, Space2, Space3]; // Add your other images here
+	const images = [Space1, Space2, Space3];
 	const imageDescriptions = [
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed',
 		'2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed',
