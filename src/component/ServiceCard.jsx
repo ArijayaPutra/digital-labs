@@ -6,14 +6,16 @@ import Service2 from '../assets/service-2.png';
 
 const ServiceCard = ({ image, description, currentIndex }) => {
 	return (
-		<div className='h-full w-full bg-white p-2 flex flex-col gap-y-4 rounded-xl pb-10'>
-			<div className='h-[450px] overflow-hidden flex flex-col gap-y-4 hover:scroll to bottom'>
-				<img src={image} alt={`Service`} className='w-full' />
-				<div className='px-4 flex flex-col gap-4 '>
-					<h3 className='font-playfair text-primary-500 italic font-semibold text-xl md:text-2xl'>
-						Service <span className='text-lg'>{currentIndex + 1}</span>
-					</h3>
-					<p className='text-xs md:text-base text-gray-700 font-semibold'>{description}</p>
+		<div className='h-full w-full bg-white p-2 flex flex-col gap-y-4 rounded-xl relative pb-4 '>
+			<div className='h-[450px] overflow-hidden flex flex-col gap-y-4 hover:scroll to bottom '>
+				<div className='hover:-translate-y-1/3 transition-transform ease-in-out cursor-pointer pb-32 '>
+					<img src={image} alt={`Service`} className='w-full' />
+					<div className='px-4 flex flex-col gap-2  '>
+						<h3 className='font-playfair text-primary-500 italic font-semibold text-xl md:text-2xl md:mt-2'>
+							Service <span className='text-lg'>{currentIndex + 1}</span>
+						</h3>
+						<p className='text-xs md:text-base text-gray-700 font-semibold'>{description}</p>
+					</div>
 				</div>
 			</div>
 		</div>

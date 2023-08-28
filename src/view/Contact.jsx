@@ -5,7 +5,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 const Contact = () => {
 	return (
 		<div id='contact' className='bg-white pb-8 '>
-			<div className='md:hidden z-50  flex flex-col justify-center items-center gap-6 p-6'>
+			<div className='md:hidden flex flex-col justify-center items-center gap-6 p-6'>
 				<div className='flex items-center jus gap-2 text-base text-primary-500 font-jakarta justify-center w-full'>
 					<h3>Contact Us</h3>
 					<LuArrowUpRight size={'1.5em'} />

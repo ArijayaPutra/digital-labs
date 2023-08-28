@@ -22,10 +22,9 @@ const Space = () => {
 								</ScrollAnimation>
 								In Every Click
 							</h1>
-
-							<div className='w-full'>
-								<SpaceCard />
-							</div>
+						</div>
+						<div className='w-full'>
+							<SpaceCard />
 						</div>
 					</div>
 				</div>

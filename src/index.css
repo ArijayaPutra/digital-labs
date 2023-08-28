@@ -81,3 +81,11 @@ body {
 .fade-in.visible {
 	opacity: 1;
 }
+.embla__slide {
+	flex: 0 0 35%;
+	padding-left: 1rem;
+}
+.embla__slide__mobile {
+	flex: 0 0 100%;
+	padding-left: 1rem;
+}
