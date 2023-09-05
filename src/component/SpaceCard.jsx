@@ -18,7 +18,7 @@ const ServiceCard = ({ image, description, currentIndex }) => {
 				<h3 className='font-playfair text-primary-500 italic font-semibold text-xl md:text-2xl'>
 					Works <span className='text-lg'>{currentIndex + 1}</span>
 				</h3>
-				<p className='text-xs md:text-base text-gray-700 font-semibold'>{description}</p>
+				<p className='text-base md:text-base text-gray-700 font-semibold'>{description}</p>
 			</div>
 		</div>
 	);
@@ -38,7 +38,7 @@ const ServiceCardMobile = ({ image, description, currentIndex }) => {
 				<h3 className='font-playfair text-primary-500 italic font-semibold text-xl'>
 					Works <span className='text-base'>{currentIndex + 1}</span>
 				</h3>
-				<p className='text-xs text-gray-700 font-semibold'>{description}</p>
+				<p className='text-base text-gray-700 font-semibold'>{description}</p>
 			</div>
 		</div>
 	);
@@ -89,7 +89,7 @@ const SpaceCard = () => {
 
 		mobileIntervalRef.current = setInterval(() => {
 			handleNextImage(emblaApiMobile);
-		}, 1500);
+		}, 2000);
 
 		return () => {
 			clearIntervals();
@@ -126,7 +126,7 @@ const SpaceCard = () => {
 			<div className='md:hidden'>
 				<div className='flex flex-col items-center justify-center gap-y-8'>
 					<div className='w-full flex flex-row gap-x-3 mt-4 justify-center items-center'>
-						<div className='flex items-center justify-center z-40'>
+						<div className='hidden  items-center justify-center z-40'>
 							<button className='bg-white aspect-square rounded-full text-primary-500' onClick={() => handlePreviousImage(emblaApiMobile)}>
 								<LuChevronLeft size={'2em'} />
 							</button>
@@ -141,13 +141,13 @@ const SpaceCard = () => {
 								))}
 							</div>
 						</div>
-						<div className='flex items-center justify-center z-40'>
+						<div className='hidden  items-center justify-center z-40'>
 							<button className='bg-white aspect-square rounded-full text-primary-500' onClick={() => handleNextImage(emblaApiMobile)}>
 								<LuChevronRight size={'2em'} />
 							</button>
 						</div>
 					</div>
-					<button className='bg-primary-500 w-1/2 z-40 h-14 flex text-white font-jakarta font-bold gap-x-3 items-center justify-center rounded-xl'>
+					<button className='bg-primary-500  w-1/2 z-40 h-14 flex text-white font-jakarta font-bold gap-x-3 items-center justify-center rounded-xl'>
 						<a href='#contact' className='flex'>
 							See more <LuArrowRight size={'1.5em'} />
 						</a>

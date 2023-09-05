@@ -4,8 +4,12 @@ import Linkedin from '../assets/footer-2.svg';
 import Instagram from '../assets/footer-3.svg';
 import Whatsapp from '../assets/footer-4.svg';
 import Tiktok from '../assets/footer-5.svg';
+import PropTypes from 'prop-types';
 
-const Footer = () => {
+const Footer = ({ language }) => {
+	Footer.propTypes = {
+		language: PropTypes.bool.isRequired,
+	};
 	return (
 		<div className='bg-gray-50 pb-8'>
 			<div className='md:hidden flex flex-col justify-center items-center gap-6 p-6'>
@@ -15,8 +19,8 @@ const Footer = () => {
 						<h3>LS Digital Labs</h3>
 					</div>
 					<div className='flex flex-col items-center  text-center text-lg text-grey-500 font-jakarta '>
-						<p>Being creative,</p>
-						<p>Seek more opportunities</p>
+						{language ? <p>Being creative,</p> : <p>Bagian dari</p>}
+						{language ? <p>Seek more opportunities</p> : <p>PT. LSA Digital Labs</p>}
 					</div>
 					<div className='flex items-center gap-4'>
 						<a href='#'>
@@ -51,8 +55,8 @@ const Footer = () => {
 							<h3>LS Digital Labs</h3>
 						</div>
 						<div className='flex flex-col items-center  text-center text-xl text-grey-500 font-jakarta '>
-							<p>Being creative,</p>
-							<p>Seek more opportunities</p>
+							{language ? <p>Being creative,</p> : <p>Bagian dari</p>}
+							{language ? <p>Seek more opportunities</p> : <p>PT. LSA Digital Labs</p>}
 						</div>
 						<div className='flex items-center gap-6'>
 							<a href='#'>
