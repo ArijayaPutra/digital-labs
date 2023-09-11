@@ -1,8 +1,8 @@
 import { LuArrowUpRight } from 'react-icons/lu';
-import About1 from '../assets/about-1.png';
-import About2 from '../assets/about-2.png';
-import Desktop1 from '../assets/about-1-desktop.png';
-import Desktop2 from '../assets/about-2-desktop.png';
+import About1 from '../assets/about-2.jpg';
+import About2 from '../assets/about-2-desktop.jpg';
+import Desktop1 from '../assets/about-2.jpg';
+import Desktop2 from '../assets/about-2-desktop.jpg';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import BgWhite from '../assets/bg-white.svg';
@@ -24,15 +24,23 @@ const AboutUs = ({ language }) => {
 						{language ? (
 							<div className='flex flex-col gap-6 z-50'>
 								<h1 className='font-bold text-4xl text-gray-900 text-balance'>
-									Bringing{' '}
-									<ScrollAnimation animateIn='animate__fadeIn' className='w-1/2 inline-block'>
-										<span className='font-playfair  text-primary-500 italic'>Magic</span>
+									<ScrollAnimation animateIn='animate__fadeIn' className='inline-block'>
+										<span className='font-playfair  text-primary-500 italic'>Process</span>
 									</ScrollAnimation>{' '}
-									to Your Brand
+									Guided <br></br>
+									<ScrollAnimation animateIn='animate__fadeIn' className='inline-block'>
+										<span className='font-playfair  text-primary-500 italic'>Technology</span>
+									</ScrollAnimation>{' '}
+									Powered <br></br>
+									<ScrollAnimation animateIn='animate__fadeIn' className=' inline-block'>
+										<span className='font-playfair  text-primary-500 italic'>Results</span>
+									</ScrollAnimation>{' '}
+									Oriented
 								</h1>
 								<p className='text-base text-gray-700 font-semibold'>
-									At our digital branding agency, we are the storytellers of the digital age, meticulously crafting every pixel and syllable to illuminate your brand&apos;s essence. Our mission is to
-									not only meet your branding needs but to exceed them, leaving an indelible digital footc
+									We transform digital presence into an art form through collaborative creativity and cutting-edge technology. AI, Blockchain, and the Metaverse are tools to democratize opportunities.
+									Beyond visuals and content, strategic narratives leverage technology for impactful results. Let&apos;s collectively create digital spaces that showcase human achievement and
+									innovation.
 								</p>
 							</div>
 						) : (
@@ -67,15 +75,11 @@ const AboutUs = ({ language }) => {
 						<div className='flex flex-col justify-center gap-6 p-6 '>
 							<div className='flex flex-col gap-6 z-50'>
 								<h1 className='font-bold text-4xl text-gray-900 text-balance'>
-									Guiding Brands to Digital Eminence and{' '}
+									Digital Eminence and{' '}
 									<ScrollAnimation animateIn='animate__fadeIn' className='w-1/2 inline-block'>
 										<span className='font-playfair  text-primary-500 italic'>Beyond</span>
 									</ScrollAnimation>{' '}
 								</h1>
-								<p className='text-base text-gray-700 font-semibold'>
-									At our digital branding agency, we are the storytellers of the digital age, meticulously crafting every pixel and syllable to illuminate your brand&apos;s essence. Our mission is to
-									not only meet your branding needs but to exceed them, leaving an indelible digital footprint that captivates and inspires.
-								</p>
 							</div>
 
 							<div className='w-full flex items-center justify-center z-40'>
@@ -110,15 +114,23 @@ const AboutUs = ({ language }) => {
 					{language ? (
 						<div className='grid grid-cols-5 z-40 '>
 							<h1 className='font-bold  text-6xl text-gray-900 text-balance col-span-2  '>
-								Bringing{' '}
+								<ScrollAnimation animateIn='animate__fadeIn' className='inline-block'>
+									<span className='font-playfair  text-primary-500 italic'>Process</span>
+								</ScrollAnimation>{' '}
+								Guided <br></br>
+								<ScrollAnimation animateIn='animate__fadeIn' className='inline-block'>
+									<span className='font-playfair  text-primary-500 italic'>Technology</span>
+								</ScrollAnimation>{' '}
+								Powered <br></br>
 								<ScrollAnimation animateIn='animate__fadeIn' className=' inline-block'>
-									<span className='font-playfair  text-primary-500 italic'>Magic</span>
-								</ScrollAnimation>
-								to Your Brand
+									<span className='font-playfair  text-primary-500 italic'>Results</span>
+								</ScrollAnimation>{' '}
+								Oriented
 							</h1>
 							<p className='text-xl text-gray-700 font-semibold col-span-3 pl-18 pt-6  '>
-								At our digital branding agency, we are the storytellers of the digital age, meticulously crafting every pixel and syllable to illuminate your brand&apos;s essence. Our mission is to
-								not only meet your branding needs but to exceed them, leaving an indelible digital footprint that captivates and inspires.
+								We transform digital presence into an art form through collaborative creativity and cutting-edge technology. AI, Blockchain, and the Metaverse are tools to democratize opportunities.
+								Beyond visuals and content, strategic narratives leverage technology for impactful results. Let&apos;s collectively create digital spaces that showcase human achievement and
+								innovation.
 							</p>
 						</div>
 					) : (
@@ -153,7 +165,7 @@ const AboutUs = ({ language }) => {
 							<div className='flex flex-col gap-6 pr-24 '>
 								{language ? (
 									<h1 className='font-bold text-6xl text-gray-900 text-balance '>
-										Guiding Brands to Digital Eminence and{' '}
+										Digital Eminence and{' '}
 										<ScrollAnimation animateIn='animate__fadeIn' className='w-1/2 inline-block'>
 											<span className='font-playfair  text-primary-500 italic'>Beyond</span>
 										</ScrollAnimation>{' '}

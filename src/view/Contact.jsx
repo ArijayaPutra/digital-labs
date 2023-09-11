@@ -1,5 +1,5 @@
 import { LuArrowUpRight, LuArrowRight } from 'react-icons/lu';
-import ContactImg from '../assets/contact.png';
+import ContactImg from '../assets/contact.jpg';
 import ScrollAnimation from 'react-animate-on-scroll';
 import PropTypes from 'prop-types';
 import emailjs from '@emailjs/browser';
@@ -54,7 +54,13 @@ const Contact = ({ language }) => {
 							</ScrollAnimation>{' '}
 						</h1>
 					) : (
-						<h1 className='font-bold text-4xl text-gray-900 text-balance text-center'>Mari kita gapai kesuksesan bersama</h1>
+						<h1 className='font-bold text-4xl text-gray-900 text-balance text-center'>
+							Mari kita gapai{' '}
+							<ScrollAnimation animateIn='animate__fadeIn' className='inline-block'>
+								<span className='font-playfair  text-primary-500 italic'>kesuksesan</span>
+							</ScrollAnimation>{' '}
+							bersama
+						</h1>
 					)}
 				</div>
 
@@ -183,7 +189,13 @@ const Contact = ({ language }) => {
 								</ScrollAnimation>{' '}
 							</h1>
 						) : (
-							<h1 className='font-bold text-6xl text-gray-900 text-balance text-center'>Mari kita gapai kesuksesan bersama</h1>
+							<h1 className='font-bold text-6xl text-gray-900 text-balance text-center'>
+								Mari kita gapai{' '}
+								<ScrollAnimation animateIn='animate__fadeIn' className='inline-block'>
+									<span className='font-playfair  text-primary-500 italic'>kesuksesan</span>
+								</ScrollAnimation>{' '}
+								bersama
+							</h1>
 						)}
 					</div>
 				</div>

@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
 import PropTypes from 'prop-types';
-import Service1 from '../assets/service-1.png';
-import Service2 from '../assets/service-2.png';
-import Service3 from '../assets/service-3.png';
-import Service4 from '../assets/service-4.png';
-import Service5 from '../assets/service-5.png';
-import Service6 from '../assets/service-6.png';
-import Service7 from '../assets/service-7.png';
-import Service8 from '../assets/service-8.png';
-import Service9 from '../assets/service-9.png';
-import Service10 from '../assets/service-10.png';
+import Service1 from '../assets/service-1.jpg';
+import Service2 from '../assets/service-2.jpg';
+import Service3 from '../assets/service-3.jpg';
+import Service4 from '../assets/service-4.jpg';
+import Service5 from '../assets/service-5.jpg';
+import Service6 from '../assets/service-6.jpg';
+import Service7 from '../assets/service-7.jpg';
+import Service8 from '../assets/service-8.jpg';
+import Service9 from '../assets/service-9.jpg';
+import Service10 from '../assets/service-10.jpg';
 
 const ServiceCard = ({ image, description, title, language, judul, deskripsi }) => {
 	return (
@@ -52,28 +52,28 @@ const ServiceCardCarousel = ({ language }) => {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const images = [Service1, Service2, Service3, Service4, Service5, Service6, Service7, Service8, Service9, Service10];
 	const titles = [
-		'Social Media Handling',
-		'Web, Logo, NFTs, Ads, SEO',
-		'Brand Journey',
+		'Social Media',
+		'Website, Digital Advertising & SEO',
+		'Brand Identity & Journey',
 		'Sentiment Analysis',
-		'KOL and Affiliations',
-		'User-Generated Content',
-		'Artificial Intelligence',
-		'Blockchain Integration and Metaverse',
-		'Physical Brand Identity',
+		'KOL & Affiliations',
+		'UGC (User-Generated Content)',
+		'Talent Management',
+		'A.I, Blockchain Integration & Metaverse',
+		'Brand Visualization',
 		'Event Management',
 	];
 	const imageDescriptions = [
-		"In the dynamic realm of social media, LS Digital Labs pioneers your brand's symphony across platforms like Instagram, Facebook, YouTube, Twitter, TikTok, and beyond. Our holistic Social Media Management marries creativity, AI insights, and seamless integration. We craft captivating content, engage authentically, optimize ads, and ride trends. AI augments strategies, while offline-online synergy maximizes brand resonance. Guided by innovation, we orchestrate your brand's resonating melody, leaving a mark across dimensions.",
-		"LS Digital Labs crafts captivating digital experiences that etch your brand's identity in the online world. Our experts excel in web creation, logo design, NFTs, digital ads, and SEO. From user-centric websites to artful logos, NFT treasures to laser-focused campaigns, we amplify your digital narrative with finesse and strategic brilliance.",
-		"Unveiling the Brand Journey: From Conception to Impactful Legacy. The 'Brand Journey' encompasses a brand's evolution from inception to legacy. It starts with defining values and progresses through identity creation, product development, growth, and adaptation. Customer engagement, consistency, and navigating challenges play vital roles. This holistic path leads to lasting connections, trust, and a lasting impact on society.",
-		'Sentiment Analysis Mastery: Shaping Strategies with Emotion Insights. At LS Digital Labs, we harness Sentiment Analysis to decode customer emotions and opinions, steering strategies towards brand success. Using advanced NLP and machine learning, we analyze text data from various sources, revealing how customers truly feel about your offerings. Our approach includes data collection, contextual analysis, and trend identification, all to empower you with profound insights for enhancing customer experiences, content strategies, crisis management, and more. With LS Digital Labs, your strategies are guided by emotional intelligence, fostering lasting success.',
-		"Influencer Power Unleashed: LS Digital Labs' Strategic Collaborations. LS Digital Labs transforms brand visibility through influencer collaborations and affiliations. We identify KOLs aligned with your values, fostering authentic connections that yield engaging content and elevated brand loyalty. Our AI-driven approach employs advanced algorithms to sift through potential partners, ensuring precision and relevance. Data-driven insights fuel impactful partnerships, expanding reach, engagement, and conversions. LS Digital Labs redefines collaboration with data-backed finesse, paving the way for strategic digital growth.",
-		'Elevating Brands with User-Generated Content (UGC) Dynamics. At LS Digital Labs, UGC is harnessed to forge authentic connections. From brand advocacy and curated campaigns to product showcases and influencer collaborations, our expertise amplifies brand influence. We strategically deploy UGC across platforms, enriching social media, client channels, sales funnels, and omni-channel narratives. Through data-driven insights and tailored content, LS Digital Labs transforms UGC into a powerful storytelling tool that resonates widely.',
-		"AI Integration: Powering Precision and Success at LS Digital Labs. AI is a cornerstone of LS Digital Labs' modern brand management. By leveraging AI-driven insights, we decode audience preferences, personalize experiences, analyze real-time data, and predict trends. From influencer matching to sentiment analysis, AI optimizes strategies. We use AI-powered chatbots, predictive analytics, content generation, and more to elevate every aspect of your brand journey. At LS Digital Labs, AI isn't about replacing creativity, but enhancing it for unparalleled results.",
-		"Revolutionizing Brand Engagement: Blockchain and Metaverse Fusion. LS Digital Labs pioneers the fusion of blockchain and the metaverse, reshaping brand-consumer dynamics. Blockchain ensures data security, transparency, and tokenized loyalty programs. Content creators and influencers receive fair rewards via smart contracts. In the metaverse, immersive experiences and virtual commerce redefine engagement. This journey signifies LS Digital Labs' commitment to innovation, trust, and authentic brand interactions.",
-		"Transcending Boundaries: LS Digital Labs' Brand Identity Mastery. Navigate the convergence of digital and physical realms with LS Digital Labs. Crafting immersive first impressions, captivating packaging, and tactile marketing tools, we orchestrate a synchronized symphony of brand identity that resonates. From stationery to billboards, we transform pixels into tangible narratives that leave lasting imprints on every touchpoint",
-		"Elevating Real-World Brand Journeys: LS Digital Labs' Event Mastery. Dive into seamless Event Management with LS Digital Labs. Replicating digital success in the physical world, we craft immersive brand experiences that resonate. From strategic content curation to flawless logistics, our holistic approach ensures unforgettable moments that bring your brand's narrative to life, leaving indelible impressions on your audience.",
+		'We manage and enhance your social media presence, utilizing strategic content, engagement, and analytics to drive brand awareness and customer engagement',
+		'We create impactful websites, manage effective digital ad campaigns, and optimize your online presence through SEO strategies, driving traffic and conversions.',
+		"We craft and guide your brand's unique story and identity, ensuring a compelling and consistent message across all touchpoints, fostering a deep connection with your audience.",
+		'Through advanced analytics, we monitor and understand audience sentiment towards your brand, enabling responsive strategies that nurture positive perceptions.',
+		"Leveraging Key Opinion Leaders (KOLs) and strategic affiliations, we broaden your brand's reach, credibility, and influence within your target communities, maximizing commercial conversions.",
+		'We encourage and curate user-generated content that showcases genuine customer experiences, building trust and a sense of community around your brand.',
+		'We identify and manage talents that align with your brand values, enabling you to collaborate with visible figures in the digital space who can authentically amplify your message.',
+		'Embracing the future, we integrate AI, explore metaverse opportunities, and leverage blockchain technology to enhance customer experiences and operational efficiency.',
+		'Our creative team brings your brand to life through captivating visuals encompassing logos, designs, and imagery that resonate with your target market.',
+		"From concept to execution, we curate memorable events that align with your brand's essence, fostering meaningful interactions and memorable experiences.",
 	];
 	const juduls = [
 		'Media Sosial',

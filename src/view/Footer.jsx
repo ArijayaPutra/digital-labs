@@ -19,29 +19,29 @@ const Footer = ({ language }) => {
 						<h3>LS Digital Labs</h3>
 					</div>
 					<div className='flex flex-col items-center  text-center text-lg text-grey-500 font-jakarta '>
-						{language ? <p>Being creative,</p> : <p>Bagian dari</p>}
-						{language ? <p>Seek more opportunities</p> : <p>PT. LSA Digital Labs</p>}
+						{language ? <p>Part of</p> : <p>Bagian dari</p>}
+						{language ? <p>PT. LSA Digital Labs</p> : <p>PT. LSA Digital Labs</p>}
 					</div>
 					<div className='flex items-center gap-4'>
-						<a href='#'>
+						<a href='mailto:mail@lsdigitallabs.com'>
 							<img src={Message} alt='Email' className='w-6 h-6' />
 						</a>
-						<a href='#'>
+						<a href='https://www.linkedin.com/company/pt-lsa-digital-labs/'>
 							<img src={Linkedin} alt='LinkedIn' className='w-6 h-6' />
 						</a>
-						<a href='#'>
+						<a href='https://instagram.com/ls.digitallabs?igshid=MzRlODBiNWFlZA=='>
 							<img src={Instagram} alt='Instagram' className='w-6 h-6' />
 						</a>
-						<a href='#'>
+						<a href='https://wa.me/+6281326434621'>
 							<img src={Whatsapp} alt='WhatsApp' className='w-6 h-6' />
 						</a>
-						<a href='#'>
+						<a href='https://www.tiktok.com/@ls.digitallabs?is_from_webapp=1&sender_device=pc'>
 							<img src={Tiktok} alt='TikTok' className='w-6 h-6' />
 						</a>
 					</div>
 
 					<div className='flex flex-col gap-6 text-center text-grey-400 text-lg'>
-						<p>© Hak Cipta LS Digital Labs Seluruh Hak Dilindungi</p>
+						{language ? <p>© LS Digital Labs All Rights Reserved</p> : <p>© Hak Cipta LS Digital Labs Seluruh Hak Dilindungi</p>}
 					</div>
 				</div>
 			</div>
@@ -55,29 +55,29 @@ const Footer = ({ language }) => {
 							<h3>LS Digital Labs</h3>
 						</div>
 						<div className='flex flex-col items-center  text-center text-xl text-grey-500 font-jakarta '>
-							{language ? <p>Being creative,</p> : <p>Bagian dari</p>}
-							{language ? <p>Seek more opportunities</p> : <p>PT. LSA Digital Labs</p>}
+							{language ? <p>Part of</p> : <p>Bagian dari</p>}
+							{language ? <p>PT. LSA Digital Labs</p> : <p>PT. LSA Digital Labs</p>}
 						</div>
 						<div className='flex items-center gap-6'>
-							<a href='#'>
+							<a href='mailto:mail@lsdigitallabs.com'>
 								<img src={Message} alt='Email' className='w-8 h-8' />
 							</a>
-							<a href='#'>
+							<a href='https://www.linkedin.com/company/pt-lsa-digital-labs/'>
 								<img src={Linkedin} alt='LinkedIn' className='w-8 h-8' />
 							</a>
-							<a href='#'>
+							<a href='https://instagram.com/ls.digitallabs?igshid=MzRlODBiNWFlZA=='>
 								<img src={Instagram} alt='Instagram' className='w-8 h-8' />
 							</a>
-							<a href='#'>
+							<a href='https://wa.me/+6281326434621'>
 								<img src={Whatsapp} alt='WhatsApp' className='w-8 h-8' />
 							</a>
-							<a href='#'>
+							<a href='https://www.tiktok.com/@ls.digitallabs?is_from_webapp=1&sender_device=pc'>
 								<img src={Tiktok} alt='TikTok' className='w-8 h-8' />
 							</a>
 						</div>
 
 						<div className='flex flex-col gap-6 text-center text-grey-400 text-xl'>
-							<p>© Hak Cipta LS Digital Labs Seluruh Hak Dilindungi</p>
+							{language ? <p>© LS Digital Labs All Rights Reserved</p> : <p>© Hak Cipta LS Digital Labs Seluruh Hak Dilindungi</p>}
 						</div>
 					</div>
 				</div>

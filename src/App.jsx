@@ -7,17 +7,31 @@ import Works from './view/Works';
 import Contact from './view/Contact';
 import Footer from './view/Footer';
 
-import SplashPotrait from './assets/potrait.mp4';
-import SplashLandscape from './assets/landscape.mp4';
+import SplashPotrait from './assets/mobile.gif';
+import SplashLandscape from './assets/desktop.mp4';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import ReactPlayer from 'react-player';
 
 function App() {
 	const [showSplash, setShowSplash] = useState(true);
+	const [isWhiteBackground, setIsWhiteBackground] = useState(false);
+
+	useEffect(() => {
+		// Set latar belakang menjadi putih setiap 3 detik
+		const intervalId = setInterval(() => {
+			setIsWhiteBackground((prev) => !prev);
+		}, 2100);
+
+		// Membersihkan interval saat komponen tidak lagi ter-render
+		return () => clearInterval(intervalId);
+	}, []);
+
+	const backgroundColor = isWhiteBackground ? '#FFFFFF' : '#05090A';
 
 	useEffect(() => {
 		const splashTimeout = setTimeout(() => {
 			setShowSplash(false);
-		}, 2500);
+		}, 3000);
 
 		return () => clearTimeout(splashTimeout);
 	}, []);
@@ -25,7 +39,7 @@ function App() {
 	const cursorRef = useRef(null);
 	const cursor2Ref = useRef(null);
 
-	const [language, setLanguage] = useState(false);
+	const [language, setLanguage] = useState(true);
 
 	const toggleLanguage = () => {
 		setLanguage(!language);
@@ -46,15 +60,25 @@ function App() {
 	return (
 		<>
 			{showSplash ? (
-				<video autoPlay muted loop style={{ width: '100%', height: '100vh', objectFit: 'cover', position: 'fixed', top: 0, left: 0 }}>
-					<source src={SplashPotrait} type='video/mp4' className='md:hidden' />
-					<source src={SplashLandscape} type='video/mp4' className='hidden md:block' />
-					Your browser does not support the video tag.
-				</video>
+				<div className='w-full h-screen ' style={{ backgroundColor, transition: 'background-color' }}>
+					<img src={SplashPotrait} alt='splash' className='w-full h-full object-cover' />
+
+					<ReactPlayer
+						className='hidden md:block object-cover'
+						width='100%'
+						height='100vh'
+						playing={true}
+						controls={false}
+						muted={true}
+						loop={true}
+						style={{ position: 'fixed', top: 0, left: 0, objectfit: 'cover' }}
+						url={SplashLandscape}
+					/>
+				</div>
 			) : (
 				<>
-					<div ref={cursorRef} className='cursor z-50'></div>
-					<div ref={cursor2Ref} className='cursor2 z-50'></div>
+					<div ref={cursorRef} className='cursor -z-50 md:z-50  '></div>
+					<div ref={cursor2Ref} className='cursor2 -z-50 md:z-50'></div>
 
 					{language ? (
 						<div
@@ -73,7 +97,8 @@ function App() {
 					)}
 
 					<ParallaxProvider>
-						<Hero language={language} />
+						{/* Letakkan konten-konten di sini */}
+						<Hero language={language} /> {/* Jika Anda ingin Hero di atas */}
 						<AboutUs language={language} />
 						<Services language={language} />
 						<Space language={language} />

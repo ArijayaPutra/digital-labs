@@ -1,4 +1,4 @@
-import heroMobile from '../assets/hero-mobile.png';
+import heroMobile from '../assets/hero.jpg';
 import Navbar from '../component/Navbar';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import PropTypes from 'prop-types';
@@ -13,9 +13,6 @@ const Hero = ({ language }) => {
 				{language ? (
 					<div className='flex flex-col items-center justify-center gap-6'>
 						<h1 className='font-playfair font-semibold italic text-center text-balance text-4xl md:text-6xl'>Elevating Dreams, Crafting Success</h1>
-						<p className='font-jakarta text-center text-lg md:text-xl'>
-							We specialize in transforming ambitions into achievements, breathing life into ideas that resonate, and crafting success stories that inspire.
-						</p>
 					</div>
 				) : (
 					<div className='flex flex-col items-center justify-center gap-6'>

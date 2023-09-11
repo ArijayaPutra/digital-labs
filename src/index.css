@@ -8,33 +8,43 @@ body {
 #root {
 	z-index: -10;
 }
-.cursor {
-	position: fixed;
-	width: 50px;
-	height: 50px;
-	border: 1px solid #c6c6c6;
-	border-radius: 50%;
-	left: 0;
-	top: 0;
-	pointer-events: none;
-	transform: translate(-50%, -50%);
-	transition: 0.1s;
+@media screen and (min-width: 768px) {
+	.cursor {
+		position: fixed;
+		width: 50px;
+		height: 50px;
+		border: 1px solid #c6c6c6;
+		border-radius: 50%;
+		left: 0;
+		top: 0;
+		pointer-events: none;
+		transform: translate(-50%, -50%);
+		transition: 0.1s;
+	}
+	.cursor2 {
+		position: fixed;
+		width: 8px;
+		height: 8px;
+		background-color: #c6c6c6;
+		border-radius: 50%;
+		left: 0;
+		top: 0;
+		pointer-events: none;
+		transform: translate(-50%, -50%);
+		transition: 0.15s;
+	}
 }
 
-.cursor2 {
-	position: fixed;
-	width: 8px;
-	height: 8px;
-	background-color: #c6c6c6;
-	border-radius: 50%;
-	left: 0;
-	top: 0;
-	pointer-events: none;
-	transform: translate(-50%, -50%);
-	transition: 0.15s;
+cursor2 {
+	display: none;
+}
+
+.navbar {
+	z-index: 100;
 }
 .menu-container {
-	position: absolute;
+	position: fixed;
+	z-index: 100;
 	width: 100%;
 	top: -100%;
 	left: 50%;
@@ -81,12 +91,13 @@ body {
 .fade-in.visible {
 	opacity: 1;
 }
+
 .embla__slide {
-	flex: 0 0 35%;
+	display: flex;
 	padding-left: 1rem;
 }
 .embla__slide__mobile {
-	flex: 0 0 100%;
+	display: flex;
 	padding-left: 1rem;
 }
 .rotate {
@@ -100,4 +111,61 @@ body {
 	to {
 		transform: rotate(360deg);
 	}
+}
+/* CSS */
+.image-container {
+	position: relative;
+	width: 16rem;
+	height: 16rem;
+	overflow: hidden;
+}
+
+.image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: opacity 0.3s;
+}
+.image-container-potrait {
+	position: relative;
+	width: 20rem;
+	height: 100%;
+	overflow: hidden;
+}
+
+.image-container-potrait img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: opacity 0.3s;
+}
+.image-container-potrait:hover img {
+	opacity: 0.5;
+}
+
+.image-container:hover img {
+	opacity: 0.5;
+}
+
+.overlay {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+	opacity: 0;
+	transition: opacity 0.5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.image-container:hover .overlay {
+	opacity: 1; /* Opacity saat dihover */
+}
+.image-container-potrait:hover .overlay {
+	opacity: 1; /* Opacity saat dihover */
+}
+
+.overlay img {
+	width: 2.5rem;
+	height: 2.5rem;
 }

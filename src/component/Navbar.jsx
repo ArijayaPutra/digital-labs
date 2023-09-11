@@ -21,14 +21,14 @@ const Navbar = ({ language }) => {
 	};
 	return (
 		<>
-			<div className='flex justify-between items-center h-16 bg-gray-800 md:hidden z-50'>
+			<div className='flex justify-between items-center h-16  md:hidden navbar '>
 				<div className='absolute top-8 left-1/2 transform -translate-x-1/2'>
 					<img src={logoWhite} alt='logo' className='h-10' />
 				</div>
-				<div className='cursor-pointer top-10 right-8 absolute'>
+				<div className='cursor-pointer top-10 right-8  fixed'>
 					<LuAlignJustify size={'1.5em'} onClick={toggleMenu} />
 				</div>
-				<div className={`menu-container ${menuOpen ? 'open' : ''} pb-6 pt-8`}>
+				<div className={`menu-container ${menuOpen ? 'open' : ''} pb-6 pt-8 fixed  bg-gray-800`}>
 					{language ? (
 						<ul className='py-2 font-jakarta text-base '>
 							<li className='px-4 py-2'>
@@ -65,8 +65,8 @@ const Navbar = ({ language }) => {
 				</div>
 			</div>
 
-			<div className='hidden md:flex flex-row items-center justify-center '>
-				<ul className='py-2 font-jakarta text-base flex gap-x-16 absolute top-8 left-1/2 transform -translate-x-1/2'>
+			<div className='hidden md:flex flex-row items-center justify-center  '>
+				<ul className='py-2 font-jakarta text-base flex gap-x-16  top-8 left-1/2 transform -translate-x-1/2 fixed z-50 '>
 					<li
 						className={`px-4 py-2 cursor-pointer ${hoveredItem !== null && hoveredItem !== 0 ? 'opacity-50' : ''} ${hoveredItem === 0 ? 'opacity-100' : ''}`}
 						onMouseEnter={() => handleHover(0)}

@@ -1,157 +1,436 @@
-import { LuChevronLeft, LuChevronRight, LuArrowRight } from 'react-icons/lu';
-import PropTypes from 'prop-types';
+import Work1 from '../assets/space/Fara-1.mp4';
+import Work2 from '../assets/space/Miryeo-1.jpg';
+import Work3 from '../assets/space/Fara-2.mp4';
+import Work4 from '../assets/space/Miryeo-2.jpg';
+import Work5 from '../assets/space/Madame-Chang.mp4';
+import Work6 from '../assets/space/Miryeo-3.jpg';
+import Work8 from '../assets/space/Madame-Chang.jpg';
+import Work7 from '../assets/space/Barby-Bakery.mp4';
+import Work9 from '../assets/space/Better-than-raw.mp4';
+
+import Work11 from '../assets/space/Jhony-Bride.mp4';
+import Work12 from '../assets/space/Optik-JMTOP.mp4';
+import Work13 from '../assets/space/Sandy-Collection.mp4';
+import Work14 from '../assets/space/Seolmi.mp4';
+import Work15 from '../assets/space/Waroeng-Ipang.mp4';
+import Work16 from '../assets/space/Yoogu-Bar.mp4';
+import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
+
+import Logo from '../assets/logo-white.png';
+import { useState } from 'react';
+import ReactPlayer from 'react-player/youtube';
 import useEmblaCarousel from 'embla-carousel-react';
-import Space1 from '../assets/space-1.png';
-import Space2 from '../assets/space-2.png';
-import Space3 from '../assets/space-3.png';
-import Space4 from '../assets/space-1.png';
-import Space5 from '../assets/space-2.png';
-import Space6 from '../assets/space-3.png';
-import '../index.css';
-import { useEffect, useRef } from 'react';
-
-const ServiceCard = ({ image, description, currentIndex }) => {
-	return (
-		<div className='h-full w-full bg-white p-2 flex flex-col gap-y-4 rounded-xl pb-10 shadow-md '>
-			<img src={image} alt={`Space`} className='w-full' />
-			<div className='px-4 flex flex-col gap-4 items-center'>
-				<h3 className='font-playfair text-primary-500 italic font-semibold text-xl md:text-2xl'>
-					Works <span className='text-lg'>{currentIndex + 1}</span>
-				</h3>
-				<p className='text-base md:text-base text-gray-700 font-semibold'>{description}</p>
-			</div>
-		</div>
-	);
-};
-
-ServiceCard.propTypes = {
-	image: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
-	currentIndex: PropTypes.number.isRequired,
-};
-
-const ServiceCardMobile = ({ image, description, currentIndex }) => {
-	return (
-		<div className='h-full w-full bg-white p-2 flex flex-col gap-y-4 rounded-xl pb-10 shadow-md'>
-			<img src={image} alt={`Space `} className='w-full' />
-			<div className='px-4 flex flex-col gap-4 items-center'>
-				<h3 className='font-playfair text-primary-500 italic font-semibold text-xl'>
-					Works <span className='text-base'>{currentIndex + 1}</span>
-				</h3>
-				<p className='text-base text-gray-700 font-semibold'>{description}</p>
-			</div>
-		</div>
-	);
-};
-
-ServiceCardMobile.propTypes = {
-	image: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
-	currentIndex: PropTypes.number.isRequired,
-};
-
 const SpaceCard = () => {
-	const images = [Space1, Space2, Space3, Space4, Space5, Space6];
-	const imageDescriptions = [
-		'1Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus...',
-		'2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus...',
-		'3Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus...',
-		'4Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus...',
-		'5Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus...',
-		'6Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus...',
-	];
+	const [hoveredImage, setHoveredImage] = useState(null);
+	const OPTIONS = { dragFree: true, containScroll: 'trimSnaps' };
+	const [emblas, embla] = useEmblaCarousel(OPTIONS);
+	const [emblasMobile, emblaMobile] = useEmblaCarousel(OPTIONS);
+	const [activeSlide, setActiveSlide] = useState(0);
+	const [activeSlideMobile, setActiveSlideMobile] = useState(0);
 
-	const [emblaRefDesktop, emblaApiDesktop] = useEmblaCarousel();
-	const [emblaRefMobile, emblaApiMobile] = useEmblaCarousel();
+	const handleNextImageMobile = () => {
+		if (emblaMobile && emblaMobile.scrollTo) {
+			const totalSlides = slideMobile.length;
 
-	const desktopIntervalRef = useRef(null);
-	const mobileIntervalRef = useRef(null);
+			const currentIndex = emblaMobile.selectedScrollSnap();
 
-	const handleNextImage = (emblaApi) => {
-		if (emblaApi.canScrollNext()) {
-			emblaApi.scrollNext();
-		} else {
-			emblaApi.scrollTo(0);
+			const nextIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+
+			emblaMobile.scrollTo(nextIndex);
+			setActiveSlideMobile(nextIndex);
 		}
 	};
 
-	const handlePreviousImage = (emblaApi) => {
-		emblaApi.scrollPrev();
-	};
-	const clearIntervals = () => {
-		clearInterval(desktopIntervalRef.current);
-		clearInterval(mobileIntervalRef.current);
-	};
-	useEffect(() => {
-		desktopIntervalRef.current = setInterval(() => {
-			handleNextImage(emblaApiDesktop);
-		}, 3000);
+	const handlePreviousImageMobile = () => {
+		if (emblaMobile && emblaMobile.scrollTo) {
+			const totalSlides = slideMobile.length;
 
-		mobileIntervalRef.current = setInterval(() => {
-			handleNextImage(emblaApiMobile);
-		}, 2000);
+			const currentIndex = emblaMobile.selectedScrollSnap();
 
-		return () => {
-			clearIntervals();
-		};
-	}, [emblaApiDesktop, emblaApiMobile]);
+			const prevIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+
+			emblaMobile.scrollTo(prevIndex);
+			setActiveSlideMobile(prevIndex);
+		}
+	};
+
+	const handleNextImage = () => {
+		if (embla && embla.scrollTo) {
+			const totalSlides = slides.length;
+
+			const currentIndex = embla.selectedScrollSnap();
+
+			const nextIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+
+			embla.scrollTo(nextIndex);
+			setActiveSlide(nextIndex);
+		}
+	};
+
+	const handlePreviousImage = () => {
+		if (embla && embla.scrollTo) {
+			const totalSlides = slides.length;
+
+			const currentIndex = embla.selectedScrollSnap();
+
+			const prevIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+
+			embla.scrollTo(prevIndex);
+			setActiveSlide(prevIndex);
+		}
+	};
+
+	const handleImageHover = (index) => {
+		setHoveredImage(index);
+	};
+
+	const handleImageLeave = () => {
+		setHoveredImage(null);
+	};
+
+	const slides = [
+		{
+			id: 1,
+			content: (
+				<div className='embla__slide gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work1} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+					<div className='flex flex-col justify-between w-full h-full '>
+						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work2} alt='Work2' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<img src={Logo} alt='logo' />
+								</div>
+							)}
+						</div>
+						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work4} alt='Work4' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<img src={Logo} alt='logo' />
+								</div>
+							)}
+						</div>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 2,
+			content: (
+				<div className='embla__slide gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work3} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+					<div className='flex flex-col justify-between w-full h-full '>
+						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work6} alt='Work2' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<img src={Logo} alt='logo' />
+								</div>
+							)}
+						</div>
+						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work8} alt='Work4' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<img src={Logo} alt='logo' />
+								</div>
+							)}
+						</div>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 3,
+			content: (
+				<div className='embla__slide gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work5} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+					<div className=''>
+						<ReactPlayer url={Work7} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 4,
+			content: (
+				<div className='embla__slide gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work9} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+					<div className='w-full h-full'>
+						<ReactPlayer url='https://youtube.com/shorts/5JHuDPUzXqU?si=6AdD_n8cRPnb2kxZ' width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 5,
+			content: (
+				<div className='embla__slide gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work12} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+					<div className=''>
+						<ReactPlayer url={Work13} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 6,
+			content: (
+				<div className='embla__slide gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work14} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+					<div className=''>
+						<ReactPlayer url={Work15} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 7,
+			content: (
+				<div className='embla__slide gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work16} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+	];
+
+	const slideMobile = [
+		{
+			id: 1,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work1} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 2,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className='flex flex-col justify-between w-full h-full '>
+						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work2} alt='Work2' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<img src={Logo} alt='logo' />
+								</div>
+							)}
+						</div>
+						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work4} alt='Work4' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<img src={Logo} alt='logo' />
+								</div>
+							)}
+						</div>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 3,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work3} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 4,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className='flex flex-col justify-between w-full h-full '>
+						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work6} alt='Work2' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<img src={Logo} alt='logo' />
+								</div>
+							)}
+						</div>
+						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work8} alt='Work4' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<img src={Logo} alt='logo' />
+								</div>
+							)}
+						</div>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 5,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work5} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 6,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work7} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 7,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work9} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 8,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url='https://youtube.com/shorts/5JHuDPUzXqU?si=6AdD_n8cRPnb2kxZ' width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 9,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work11} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 10,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work12} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 11,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work13} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 12,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work14} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 13,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work15} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 14,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url={Work16} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+	];
 
 	return (
 		<div>
-			<div className='hidden md:flex flex-col items-center justify-center gap-y-8'>
-				<div className='w-full flex flex-row gap-x-12 mt-4 justify-center items-center'>
-					<button className='bg-white aspect-square rounded-full text-primary-500 z-40' onClick={() => handlePreviousImage(emblaApiDesktop)}>
+			{/* Tampilan desktop */}
+			<div className='hidden md:flex flex-row items-center justify-center gap-6  overflow-hidden'>
+				<div className='flex items-center justify-center'>
+					<button className='bg-white aspect-square rounded-full text-primary-500' onClick={handlePreviousImage}>
 						<LuChevronLeft size={'2em'} />
 					</button>
-					<div className='embla overflow-hidden p-8' ref={emblaRefDesktop}>
-						<div className='embla__container flex'>
-							{images.map((image, index) => (
-								<div className='embla__slide' key={index}>
-									<ServiceCard image={image} description={imageDescriptions[index]} currentIndex={index} />
+				</div>
+				<div className='embla overflow-hidden w-[82%]' ref={emblas}>
+					<div className='flex-row gap-6 embla__container flex'>
+						{' '}
+						{slides.map((slide, index) => (
+							<div key={index} className={`embla__slide gap-6 justify-center  ${activeSlide === index ? 'active-slide' : ''}`}>
+								{slide.content}
+							</div>
+						))}
+					</div>
+				</div>
+				<div className='flex items-center justify-center'>
+					<button className='bg-white aspect-square rounded-full text-primary-500' onClick={handleNextImage}>
+						<LuChevronRight size={'2em'} />
+					</button>
+				</div>
+			</div>
+
+			{/* Tampilan mobile */}
+			<div className='md:hidden'>
+				<div className='flex gap-4 items-center justify-center '>
+					<div className='flex items-center justify-center z-50'>
+						<button className='bg-white aspect-square rounded-full text-primary-500' onClick={handlePreviousImageMobile}>
+							<LuChevronLeft size={'2em'} />
+						</button>
+					</div>
+					<div className='embla overflow-hidden w-[90%]' ref={emblasMobile}>
+						<div className=' gap-6 embla__container flex'>
+							{' '}
+							{slideMobile.map((slide, index) => (
+								<div key={index} className={`embla__slide__mobile gap-6 justify-center  ${activeSlideMobile === index ? 'active-slide' : ''}`}>
+									{slide.content}
 								</div>
 							))}
 						</div>
 					</div>
-					<button className='bg-white aspect-square rounded-full text-primary-500' onClick={() => handleNextImage(emblaApiDesktop)}>
-						<LuChevronRight size={'2em'} />
-					</button>
-				</div>
-				<button className='bg-primary-500 w-52 h-14 flex text-xl text-white font-jakarta font-bold gap-x-3 mt-10 items-center justify-center rounded-xl'>
-					<a href='#contact' className='flex'>
-						See more <LuArrowRight size={'1.5em'} />
-					</a>
-				</button>
-			</div>
-
-			<div className='md:hidden'>
-				<div className='flex flex-col items-center justify-center gap-y-8'>
-					<div className='w-full flex flex-row gap-x-3 mt-4 justify-center items-center'>
-						<div className='hidden  items-center justify-center z-40'>
-							<button className='bg-white aspect-square rounded-full text-primary-500' onClick={() => handlePreviousImage(emblaApiMobile)}>
-								<LuChevronLeft size={'2em'} />
-							</button>
-						</div>
-
-						<div className='embla overflow-hidden py-8 ' ref={emblaRefMobile}>
-							<div className='embla__container flex '>
-								{images.map((image, index) => (
-									<div className='embla__slide__mobile' key={index}>
-										<ServiceCardMobile image={image} description={imageDescriptions[index]} currentIndex={index} />
-									</div>
-								))}
-							</div>
-						</div>
-						<div className='hidden  items-center justify-center z-40'>
-							<button className='bg-white aspect-square rounded-full text-primary-500' onClick={() => handleNextImage(emblaApiMobile)}>
-								<LuChevronRight size={'2em'} />
-							</button>
-						</div>
+					<div className='flex items-center justify-center z-50'>
+						<button className='bg-white aspect-square rounded-full text-primary-500' onClick={handleNextImageMobile}>
+							<LuChevronRight size={'2em'} />
+						</button>
 					</div>
-					<button className='bg-primary-500  w-1/2 z-40 h-14 flex text-white font-jakarta font-bold gap-x-3 items-center justify-center rounded-xl'>
-						<a href='#contact' className='flex'>
-							See more <LuArrowRight size={'1.5em'} />
-						</a>
-					</button>
 				</div>
 			</div>
 		</div>
