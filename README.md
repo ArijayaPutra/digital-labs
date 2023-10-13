@@ -15,7 +15,7 @@ Install my-project with npm
 Start the server
 
 ```bash
-  npm run start
+  npm run dev
 ```
 
 ## Bundle Project
