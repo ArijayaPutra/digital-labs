@@ -61,7 +61,7 @@ function App() {
 		<>
 			{showSplash ? (
 				<div className='w-full h-screen ' style={{ backgroundColor, transition: 'background-color' }}>
-					<img src={SplashPotrait} alt='splash' className='w-full h-full object-cover' />
+					<img src={SplashPotrait} alt='splash' className='w-full h-full object-cover md:hidden' />
 
 					<ReactPlayer
 						className='hidden md:block object-cover'

@@ -1,22 +1,10 @@
-import Work1 from '../assets/space/Fara-1.mp4';
 import Work2 from '../assets/space/Miryeo-1.jpg';
-import Work3 from '../assets/space/Fara-2.mp4';
 import Work4 from '../assets/space/Miryeo-2.jpg';
-import Work5 from '../assets/space/Madame-Chang.mp4';
 import Work6 from '../assets/space/Miryeo-3.jpg';
 import Work8 from '../assets/space/Madame-Chang.jpg';
-import Work7 from '../assets/space/Barby-Bakery.mp4';
-import Work9 from '../assets/space/Better-than-raw.mp4';
 
-import Work11 from '../assets/space/Jhony-Bride.mp4';
-import Work12 from '../assets/space/Optik-JMTOP.mp4';
-import Work13 from '../assets/space/Sandy-Collection.mp4';
-import Work14 from '../assets/space/Seolmi.mp4';
-import Work15 from '../assets/space/Waroeng-Ipang.mp4';
-import Work16 from '../assets/space/Yoogu-Bar.mp4';
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
 
-import Logo from '../assets/logo-white.png';
 import { useState } from 'react';
 import ReactPlayer from 'react-player/youtube';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -93,15 +81,12 @@ const SpaceCard = () => {
 			id: 1,
 			content: (
 				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work1} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
 					<div className='flex flex-col justify-between w-full h-full '>
 						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
 							<img src={Work2} alt='Work2' />
 							{hoveredImage && (
 								<div className='overlay'>
-									<img src={Logo} alt='logo' />
+									<p className='text-white text-5xl font-jakarta'>Miryeo</p>
 								</div>
 							)}
 						</div>
@@ -109,10 +94,13 @@ const SpaceCard = () => {
 							<img src={Work4} alt='Work4' />
 							{hoveredImage && (
 								<div className='overlay'>
-									<img src={Logo} alt='logo' />
+									<p className='text-white text-5xl font-jakarta'>Miryeo</p>
 								</div>
 							)}
 						</div>
+					</div>
+					<div className='w-full h-full'>
+						<ReactPlayer url='https://youtube.com/shorts/IpdtXDLC4ns?feature=shared' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 				</div>
 			),
@@ -121,26 +109,26 @@ const SpaceCard = () => {
 			id: 2,
 			content: (
 				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work3} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
 					<div className='flex flex-col justify-between w-full h-full '>
 						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
 							<img src={Work6} alt='Work2' />
 							{hoveredImage && (
 								<div className='overlay'>
-									<img src={Logo} alt='logo' />
+									<p className='text-white text-5xl font-jakarta'>Miryeo</p>
 								</div>
 							)}
 						</div>
-						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+						<div className='image-container-long' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
 							<img src={Work8} alt='Work4' />
 							{hoveredImage && (
 								<div className='overlay'>
-									<img src={Logo} alt='logo' />
+									<p className='text-white text-5xl font-jakarta text-center'>Madame Chang</p>
 								</div>
 							)}
 						</div>
+					</div>
+					<div className='w-full h-full'>
+						<ReactPlayer url='https://youtube.com/shorts/XiDtXFVfVBY?si=SEcUd4eU8r1eKS8r' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 				</div>
 			),
@@ -149,60 +137,11 @@ const SpaceCard = () => {
 			id: 3,
 			content: (
 				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work5} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-					<div className=''>
-						<ReactPlayer url={Work7} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 4,
-			content: (
-				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work9} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					<div className='w-full h-full'>
+						<ReactPlayer url='https://youtube.com/shorts/4E19pkEd-0Q?si=e3cT5Zak44bHpz_-' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 					<div className='w-full h-full'>
-						<ReactPlayer url='https://youtube.com/shorts/5JHuDPUzXqU?si=6AdD_n8cRPnb2kxZ' width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 5,
-			content: (
-				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work12} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-					<div className=''>
-						<ReactPlayer url={Work13} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 6,
-			content: (
-				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work14} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-					<div className=''>
-						<ReactPlayer url={Work15} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 7,
-			content: (
-				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work16} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+						<ReactPlayer url='https://youtube.com/shorts/DBlNBV112KA?si=JByX4-416zWKA9tR' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 				</div>
 			),
@@ -214,8 +153,23 @@ const SpaceCard = () => {
 			id: 1,
 			content: (
 				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work1} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					<div className='flex flex-col justify-between w-full h-full '>
+						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work2} alt='Work2' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<p className='text-white text-5xl font-jakarta'>Miryeo</p>
+								</div>
+							)}
+						</div>
+						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work4} alt='Work4' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<p className='text-white text-5xl font-jakarta'>Miryeo</p>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			),
@@ -224,23 +178,8 @@ const SpaceCard = () => {
 			id: 2,
 			content: (
 				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className='flex flex-col justify-between w-full h-full '>
-						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
-							<img src={Work2} alt='Work2' />
-							{hoveredImage && (
-								<div className='overlay'>
-									<img src={Logo} alt='logo' />
-								</div>
-							)}
-						</div>
-						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
-							<img src={Work4} alt='Work4' />
-							{hoveredImage && (
-								<div className='overlay'>
-									<img src={Logo} alt='logo' />
-								</div>
-							)}
-						</div>
+					<div className='w-full h-full '>
+						<ReactPlayer url='https://youtube.com/shorts/IpdtXDLC4ns?feature=shared' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 				</div>
 			),
@@ -249,8 +188,23 @@ const SpaceCard = () => {
 			id: 3,
 			content: (
 				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work3} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					<div className='flex flex-col justify-between w-full h-full '>
+						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work6} alt='Work2' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<p className='text-white text-5xl font-jakarta'>Miryeo</p>
+								</div>
+							)}
+						</div>
+						<div className='image-container-long' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
+							<img src={Work8} alt='Work4' className='' />
+							{hoveredImage && (
+								<div className='overlay'>
+									<p className='text-white text-5xl font-jakarta text-center'>Madame Chang</p>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			),
@@ -259,23 +213,8 @@ const SpaceCard = () => {
 			id: 4,
 			content: (
 				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className='flex flex-col justify-between w-full h-full '>
-						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
-							<img src={Work6} alt='Work2' />
-							{hoveredImage && (
-								<div className='overlay'>
-									<img src={Logo} alt='logo' />
-								</div>
-							)}
-						</div>
-						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
-							<img src={Work8} alt='Work4' />
-							{hoveredImage && (
-								<div className='overlay'>
-									<img src={Logo} alt='logo' />
-								</div>
-							)}
-						</div>
+					<div className='w-full h-full'>
+						<ReactPlayer url='https://youtube.com/shorts/XiDtXFVfVBY?si=SEcUd4eU8r1eKS8r' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 				</div>
 			),
@@ -284,8 +223,8 @@ const SpaceCard = () => {
 			id: 5,
 			content: (
 				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work5} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					<div className='w-full h-full'>
+						<ReactPlayer url='https://youtube.com/shorts/4E19pkEd-0Q?si=e3cT5Zak44bHpz_-' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 				</div>
 			),
@@ -294,88 +233,8 @@ const SpaceCard = () => {
 			id: 6,
 			content: (
 				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work7} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 7,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work9} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 8,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url='https://youtube.com/shorts/5JHuDPUzXqU?si=6AdD_n8cRPnb2kxZ' width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 9,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work11} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 10,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work12} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 11,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work13} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 12,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work14} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 13,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work15} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 14,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work16} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+					<div className='w-full h-full'>
+						<ReactPlayer url='https://youtube.com/shorts/DBlNBV112KA?si=JByX4-416zWKA9tR' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 				</div>
 			),
@@ -411,7 +270,7 @@ const SpaceCard = () => {
 			{/* Tampilan mobile */}
 			<div className='md:hidden'>
 				<div className='flex gap-4 items-center justify-center '>
-					<div className='flex items-center justify-center z-50'>
+					<div className='flex items-center justify-center z-50 absolute left-4'>
 						<button className='bg-white aspect-square rounded-full text-primary-500' onClick={handlePreviousImageMobile}>
 							<LuChevronLeft size={'2em'} />
 						</button>
@@ -426,7 +285,7 @@ const SpaceCard = () => {
 							))}
 						</div>
 					</div>
-					<div className='flex items-center justify-center z-50'>
+					<div className='flex items-center justify-center z-50 absolute right-4'>
 						<button className='bg-white aspect-square rounded-full text-primary-500' onClick={handleNextImageMobile}>
 							<LuChevronRight size={'2em'} />
 						</button>

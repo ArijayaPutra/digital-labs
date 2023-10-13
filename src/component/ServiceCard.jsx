@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
 import PropTypes from 'prop-types';
 import Service1 from '../assets/service-1.jpg';
@@ -107,7 +107,12 @@ const ServiceCardCarousel = ({ language }) => {
 	const handlePreviousImage = () => {
 		setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
 	};
-
+	useEffect(() => {
+		images.forEach((imageSrc) => {
+			const img = new Image();
+			img.src = imageSrc;
+		});
+	}, []);
 	return (
 		<div className='w-full mt-4'>
 			{/* Tampilan desktop */}

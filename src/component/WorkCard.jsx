@@ -1,24 +1,16 @@
-import Work1 from '../assets/work/Acaii.mp4';
 import Work2 from '../assets/work/Luxius.jpg';
-import Work3 from '../assets/work/Luxius.mp4';
+
 import Work4 from '../assets/work/Bridges-Eyewear.jpg';
-import Work5 from '../assets/work/Leka.mp4';
+
 import Work6 from '../assets/work/Sandy-Collection.jpg';
 import Work8 from '../assets/work/Yande-Oil.png';
-import Work7 from '../assets/work/Kip-Beauty.mp4';
-import Work9 from '../assets/work/Loccitane.mp4';
-import Work10 from '../assets/work/Maybeline.mp4';
-import Work11 from '../assets/work/OMG-Live.jpeg';
-import Work12 from '../assets/work/Tavi.mp4';
-import Work13 from '../assets/work/Teh-Kotak-1.mp4';
-import Work14 from '../assets/work/Teh-Kotak-2.mp4';
-import Work15 from '../assets/work/Traveloka.mp4';
-import Work16 from '../assets/work/Sandy-Collection.mp4';
+
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
 
 import { useState } from 'react';
-import ReactPlayer from 'react-player/es6';
+import ReactPlayer from 'react-player/youtube';
 import useEmblaCarousel from 'embla-carousel-react';
+
 const WorkCard = () => {
 	const [hoveredImage, setHoveredImage] = useState(null);
 	const OPTIONS = { dragFree: true, containScroll: 'trimSnaps' };
@@ -92,9 +84,6 @@ const WorkCard = () => {
 			id: 1,
 			content: (
 				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work1} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
 					<div className='flex flex-col justify-between w-full h-full '>
 						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
 							<img src={Work2} alt='Work2' />
@@ -115,6 +104,9 @@ const WorkCard = () => {
 							)}
 						</div>
 					</div>
+					<div className=''>
+						<ReactPlayer url='https://youtube.com/shorts/QB7sEaH69JE?si=_NGbmzEVF8xMxvV6' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
+					</div>
 				</div>
 			),
 		},
@@ -122,9 +114,6 @@ const WorkCard = () => {
 			id: 2,
 			content: (
 				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work3} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
 					<div className='flex flex-col justify-between w-full h-full '>
 						<div className='image-container' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
 							<img src={Work6} alt='Work2' />
@@ -143,6 +132,9 @@ const WorkCard = () => {
 							)}
 						</div>
 					</div>
+					<div className=''>
+						<ReactPlayer url='https://youtube.com/shorts/wscst1iMOQ8?si=BdG_s4RRoXXKQSsl' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
+					</div>
 				</div>
 			),
 		},
@@ -151,76 +143,10 @@ const WorkCard = () => {
 			content: (
 				<div className='embla__slide gap-6 justify-center items-center '>
 					<div className=''>
-						<ReactPlayer url={Work5} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+						<ReactPlayer url='https://youtube.com/shorts/q8352oZcGcE?si=xL4zMyLfvxkh5v7O' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 					<div className=''>
-						<ReactPlayer url={Work7} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 4,
-			content: (
-				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work9} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-					<div className=''>
-						<ReactPlayer url={Work10} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 5,
-			content: (
-				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className='flex flex-col justify-center w-full h-full bg-red-400 '>
-						<div className='image-container-potrait' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
-							<img src={Work11} alt='Work11' />
-							{hoveredImage && (
-								<div className='overlay'>
-									<p className='text-white text-5xl text-center font-jakarta'>OMG Live</p>
-								</div>
-							)}
-						</div>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 6,
-			content: (
-				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work12} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-					<div className=''>
-						<ReactPlayer url={Work13} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 7,
-			content: (
-				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work14} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-					<div className=''>
-						<ReactPlayer url={Work15} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 8,
-			content: (
-				<div className='embla__slide gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work16} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+						<ReactPlayer url='https://youtube.com/shorts/LkPrHQxMmm4?si=P0WEtg9lJksw7u1i' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 				</div>
 			),
@@ -230,16 +156,6 @@ const WorkCard = () => {
 	const slideMobile = [
 		{
 			id: 1,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work1} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 2,
 			content: (
 				<div className='embla__slide__mobile gap-6 justify-center items-center '>
 					<div className='flex flex-col justify-between w-full h-full '>
@@ -264,17 +180,17 @@ const WorkCard = () => {
 			),
 		},
 		{
-			id: 3,
+			id: 2,
 			content: (
 				<div className='embla__slide__mobile gap-6 justify-center items-center '>
 					<div className=''>
-						<ReactPlayer url={Work3} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+						<ReactPlayer url='https://youtube.com/shorts/QB7sEaH69JE?si=_NGbmzEVF8xMxvV6' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 				</div>
 			),
 		},
 		{
-			id: 4,
+			id: 3,
 			content: (
 				<div className='embla__slide__mobile gap-6 justify-center items-center '>
 					<div className='flex flex-col justify-between w-full h-full '>
@@ -299,11 +215,21 @@ const WorkCard = () => {
 			),
 		},
 		{
+			id: 4,
+			content: (
+				<div className='embla__slide__mobile gap-6 justify-center items-center '>
+					<div className=''>
+						<ReactPlayer url='https://youtube.com/shorts/wscst1iMOQ8?si=BdG_s4RRoXXKQSsl' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
+					</div>
+				</div>
+			),
+		},
+		{
 			id: 5,
 			content: (
 				<div className='embla__slide__mobile gap-6 justify-center items-center '>
 					<div className=''>
-						<ReactPlayer url={Work5} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+						<ReactPlayer url='https://youtube.com/shorts/q8352oZcGcE?si=xL4zMyLfvxkh5v7O' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 				</div>
 			),
@@ -313,94 +239,7 @@ const WorkCard = () => {
 			content: (
 				<div className='embla__slide__mobile gap-6 justify-center items-center '>
 					<div className=''>
-						<ReactPlayer url={Work7} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 7,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work9} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 8,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work10} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 9,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className='flex flex-col justify-center w-full h-full bg-red-400 '>
-						<div className='image-container-potrait' onMouseEnter={handleImageHover} onMouseLeave={handleImageLeave}>
-							<img src={Work11} alt='Work11' />
-							{hoveredImage && (
-								<div className='overlay'>
-									<p className='text-white text-5xl text-center font-jakarta'>OMG Live</p>
-								</div>
-							)}
-						</div>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 10,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work12} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 11,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work13} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 12,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work14} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 13,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work15} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
-					</div>
-				</div>
-			),
-		},
-		{
-			id: 14,
-			content: (
-				<div className='embla__slide__mobile gap-6 justify-center items-center '>
-					<div className=''>
-						<ReactPlayer url={Work16} width='360px' height='100%' controls={true} playing={false}></ReactPlayer>
+						<ReactPlayer url='https://youtube.com/shorts/LkPrHQxMmm4?si=P0WEtg9lJksw7u1i' width='360px' height='600px' controls={true} playing={false}></ReactPlayer>
 					</div>
 				</div>
 			),
@@ -436,7 +275,7 @@ const WorkCard = () => {
 			{/* Tampilan mobile */}
 			<div className='md:hidden'>
 				<div className='flex gap-4 items-center justify-center '>
-					<div className='flex items-center justify-center z-50'>
+					<div className='flex items-center justify-center z-50  absolute left-4'>
 						<button className='bg-white aspect-square rounded-full text-primary-500' onClick={handlePreviousImageMobile}>
 							<LuChevronLeft size={'2em'} />
 						</button>
@@ -451,7 +290,7 @@ const WorkCard = () => {
 							))}
 						</div>
 					</div>
-					<div className='flex items-center justify-center z-50'>
+					<div className='flex items-center justify-center z-50 absolute right-4'>
 						<button className='bg-white aspect-square rounded-full text-primary-500' onClick={handleNextImageMobile}>
 							<LuChevronRight size={'2em'} />
 						</button>
